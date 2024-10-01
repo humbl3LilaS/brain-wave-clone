@@ -1,8 +1,15 @@
+import { BrowserRouter } from "react-router-dom";
+import ButtonGradient from "./assets/svg/ButtonGradient";
+import Button from "./components/Button";
+import Header from "./components/Header";
+
 function App() {
 	return (
-		<>
-			<h1 className="text-xl text-red-500 font-bold">Initial commit</h1>
-		</>
+		<BrowserRouter>
+			<Header />
+			<Button>super button</Button>
+			<ButtonGradient />
+		</BrowserRouter>
 	);
 }
 
