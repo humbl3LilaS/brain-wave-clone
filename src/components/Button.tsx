@@ -6,18 +6,18 @@ type ButtonProp = {
 	children: ReactNode;
 	className?: string;
 	white?: boolean;
+	onClick?: () => void;
 };
 
-const Button = ({ children, className, white }: ButtonProp) => {
-	console.log("button render");
-
+const Button = ({ children, className, white, onClick }: ButtonProp) => {
 	return (
 		<button
 			className={cn(
 				"h-11 px-7 inline-flex items-center justify-center relative button transition-colors hover:text-color-1",
 				white ? "text-n-8" : "text-n-1",
 				className,
-			)}>
+			)}
+			onClick={onClick}>
 			<span className="relative z-20">{children}</span>
 			{ButtonSvg(white)}
 		</button>
