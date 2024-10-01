@@ -6,11 +6,22 @@ import Button from "./Button";
 import { HamburgerMenu } from "../design/Header";
 import MenuSvg from "../assets/svg/MenuSvg";
 import { useState } from "react";
+import { disablePageScroll, enablePageScroll } from "scroll-lock";
 
 const Header = () => {
 	const location = useLocation();
 
 	const [openNavigation, setOpenNavigation] = useState(false);
+
+	const mobileNavHandler = () => {
+		if (!openNavigation) {
+			console.log("scroll locked");
+			disablePageScroll();
+		} else {
+			enablePageScroll();
+		}
+		setOpenNavigation((prev) => !prev);
+	};
 
 	return (
 		<section
@@ -66,9 +77,7 @@ const Header = () => {
 				<Button className="hidden lg:flex">Sign up</Button>
 				<Button
 					className={"ml-auto lg:hidden"}
-					onClick={() => {
-						setOpenNavigation((prev) => !prev);
-					}}>
+					onClick={mobileNavHandler}>
 					<MenuSvg openNavigation={openNavigation} />
 				</Button>
 			</header>
