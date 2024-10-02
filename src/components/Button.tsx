@@ -13,7 +13,7 @@ const Button = ({ children, className, white, onClick }: ButtonProp) => {
 	return (
 		<button
 			className={cn(
-				"h-11 px-7 inline-flex items-center justify-center relative button transition-colors hover:text-color-1",
+				"h-11 px-7 block items-center justify-center  relative button transition-colors hover:text-color-1",
 				white ? "text-n-8" : "text-n-1",
 				className,
 			)}
