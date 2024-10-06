@@ -5,14 +5,12 @@ export interface TNavigation {
 	onlyMobile?: boolean;
 }
 
-export type TStatus = "done" | "progress";
-
 export interface TRoadmap {
 	id: string;
 	title: string;
 	text: string;
 	date: string;
-	status: TStatus;
+	status: "done" | "progress";
 	imageUrl: string;
 	colorful?: boolean;
 }
