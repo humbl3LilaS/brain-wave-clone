@@ -66,7 +66,7 @@ const Roadmap = () => {
 						</div>
 					))}
 				</div>
-				<Button className="mt-4 mx-auto lg:mt-8">Our Roadmap</Button>
+				<Button className="mt-8 mx-auto">Our Roadmap</Button>
 			</div>
 		</Section>
 	);
